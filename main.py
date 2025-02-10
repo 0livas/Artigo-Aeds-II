@@ -52,11 +52,11 @@ def RotinaPrincipal():
     print(f"No grafo original, o nó com menor grau é {min_graph + 2} com grau {G.degree[min_graph]}")
     
     
-    #MST = nx.minimum_spanning_tree(G, weight='weight') #Obriga o nó raiz
-    #MST_directed = nx.bfs_tree(MST, source=hub_graph)  #a ser o HUB
-    #MST = MST_directed
+    MST = nx.minimum_spanning_tree(G, weight='weight') #Obriga o nó 
+    MST_directed = nx.bfs_tree(MST, source=hub_graph)  #raiz a
+    MST = MST_directed                                 #ser o hub
     
-    MST = nx.minimum_spanning_tree(G, weight='weight') #Raiz aleatória
+    #MST = nx.minimum_spanning_tree(G, weight='weight') #Raiz aleatória
 
     # Recalcular o novo hub da MST (agora é garantidamente o mesmo hub do grafo original)
     hub_mst = hub_graph  # O hub original já é a raiz da MST
@@ -83,4 +83,5 @@ def RotinaPrincipal():
 #--------------#
 #     MAIN     #
 #--------------#
+
 RotinaPrincipal()
